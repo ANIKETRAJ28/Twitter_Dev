@@ -14,7 +14,7 @@ app.listen(3000, async () => {
     //     userEmail: "c@d.com"
     // });
     const tweetRepo = new TweetRepository();
-    const tweet = await tweetRepo.getComments("65cf67e6a94bfd4a6a6ba94e");
+    // const tweet = await tweetRepo.getComments("65cf67e6a94bfd4a6a6ba94e");
     // const tweet = await Tweet.findOne({userEmail: "c@d.com"});
     // const tweet = await tweetRepo.create({content: "This is tweet with comments"});
     // tweet.comments.push({content: "first comment"});
@@ -24,5 +24,7 @@ app.listen(3000, async () => {
     // const comment =  await Comment.create({content: "Segrigated comment"});
     // tweet.comments.push(comment);
     // await tweet.save();
-    console.log(tweet);
+    // console.log(tweet);
+    const tweet = await tweetRepo.getAll(4, 2);
+    console.log(tweet[0].contentWithEmail);
 });

@@ -46,6 +46,15 @@ class TweetRepository {
             console.log(error);
         }
     }
+
+    async getAll(limit, offset) {
+        try {
+            const tweet = Tweet.find().skip(offset).limit(limit);
+            return tweet;
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 module.exports = TweetRepository;
