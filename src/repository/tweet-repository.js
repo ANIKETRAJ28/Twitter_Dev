@@ -29,15 +29,6 @@ class TweetRepository {
         }
     }
 
-    async update(id, data) {
-        try {
-            const tweet = Tweet.findByIdAndUpdate(id, data, {new: true});
-            return tweet;
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
     async delete(id) {
         try {
             const tweet = Tweet.findByIdAndDelete(id);
