@@ -1,5 +1,6 @@
 import { LikeRepository, TweetRepository } from "../repository/index.js";
 import Tweet from "../models/tweet.js";
+import Comment from "../models/comments.js";
 
 class LikeService {
     constructor() {
@@ -11,7 +12,7 @@ class LikeService {
         if(modelType == "Tweet") {
             var likeable = await Tweet.findById(modelId).populate({path: "likes"});
         } else if(modelType == "Comment") {
-            // todo
+            var likeable = await Comment.findById(modelId).populate({path: "likes"});
         } else {
             throw new Error("unknown model type");
         }
