@@ -1,18 +1,18 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
     },
     password: {
         type: String,
-        requiref: true
+        required: true,
     },
     name: {
         type: String,
-        required: true
+        required: true,
     }
 }, {timestamps: true});
 

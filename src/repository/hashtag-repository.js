@@ -1,7 +1,7 @@
 import Hashtag from "../models/hashtags.js";
 import CrudRepository from "./crud-repository.js";
 
-class HashtagRepository {
+class HashtagRepository extends CrudRepository {
     constructor() {
         super(Hashtag);
     }
