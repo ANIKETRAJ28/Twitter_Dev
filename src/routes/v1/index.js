@@ -10,5 +10,6 @@ router.get("/tweets/:id", TweetController.getTweet);
 router.post("/likes/toggle", LikeController.toggleLike);
 router.post("/comments", CommentController.create);
 router.post("/signup", UserController.signup);
+router.post("/login", UserController.login);
 
 export default router;

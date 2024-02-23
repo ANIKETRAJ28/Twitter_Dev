@@ -13,6 +13,15 @@ class UserService {
             throw error;
         }
     }
+
+    async getUserByEmail(email) {
+        try {
+            const response = this.userRepository.findBy({email});
+            return response;
+        } catch (error) {
+            throw error;
+        }
+    }
 }
 
 export default UserService;
