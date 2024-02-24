@@ -10,12 +10,17 @@ const opts = {
 };
 
 export const passportAuth = (passport) => {
-    passport.use(new JWTStratergy(opts, async(jwt_payload, done) => {
-        const user = User.findById(jwt_payload.id);
-        if(!user) {
-            done(null, false);
-        } else {
-            done(null, user);
-        }
-    }));
+    try {
+        passport.use(new JWTStratergy(opts, async(jwt_payload, done) => {
+            const user = User.findById(jwt_payload.id);
+            if(!user) {
+                done(null, false);
+            } else {
+                done(null, user);
+            }
+        }));
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
 }
