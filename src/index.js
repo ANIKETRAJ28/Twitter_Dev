@@ -2,7 +2,7 @@ import express from "express";
 import {connect} from "./config/database.js";
 import routes from "./routes/index.js";
 import bodyParser from "body-parser";
-import { passportAuth } from "./config/jwt-middleware.js";
+import { passportAuth } from "./middlewares/jwt-middleware.js";
 import passport from "passport";
 
 const app = express();
