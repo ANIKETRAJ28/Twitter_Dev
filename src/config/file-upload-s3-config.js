@@ -1,5 +1,5 @@
 import multer from "multer";
-import multers3 from "multer-s3";
+import multerS3 from "multer-s3";
 import aws from "aws-sdk";
 import dotenv from "dotenv";
 
@@ -11,7 +11,7 @@ aws.config.update({
     accessKeyId: process.env.ACCESS_KEY_ID,
 });
 
-const s3 = new aws.s3();
+const s3 = new aws.S3();
 
 const upload = multer({
     storage: multerS3({
